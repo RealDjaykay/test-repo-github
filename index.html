@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,5 +7,75 @@
 </head>
 <body style="background-color: burlywood;text-align: center;font-family: Arial, Helvetica, sans-serif, sans-serif;color:beige">
     <script src="js/numberchoosegame.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Games</title>
+    <style>
+        body {
+            background-color: white;
+            transition: background-color 0.5s;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Game</h1>
+    
+    <button onclick="numberGuessGame()">Number Guessing Game</button>
+    <button onclick="coinTossGame()">Coin Toss Game</button>
+    
+    <script>
+    // ===== Number Guessing Game =====
+    function numberGuessGame() {
+        let playAgain = true;
+        while(playAgain){
+            document.body.style.backgroundColor = "#f0a"; // start color
+            let actual = Math.floor(Math.random() * 10) + 1;
+            let guess = 0;
+            while(guess != actual){
+                guess = parseInt(prompt("Guess a number 1-10"));
+                if(guess !== actual){
+                    document.body.style.backgroundColor = "#faa"; // wrong guess
+                } else {
+                    document.body.style.backgroundColor = "#afa"; // correct
+                }
+            }
+            alert("You got it! The number was " + actual);
+            document.body.style.backgroundColor = "#fff"; // reset
+            playAgain = confirm("Play again?");
+        }
+    }
+
+    // ===== Coin Toss Game =====
+    function coinTossGame() {
+        let playAgain = true;
+        while(playAgain){
+            document.body.style.backgroundColor = "#0af"; // start color
+            let choice = prompt("Heads or Tails?").toLowerCase();
+            let toss = Math.random() < 0.5 ? "heads" : "tails";
+            if(choice === toss){
+                alert("You won! It was " + toss);
+                document.body.style.backgroundColor = "#afa"; // green for win
+            } else {
+                alert("You lost! It was " + toss);
+                document.body.style.backgroundColor = "#faa"; // red for lose
+            }
+            document.body.style.backgroundColor = "#fff"; // reset
+            playAgain = confirm("Play again?");
+        }
+    }
+    </script>
 </body>
 </html>
