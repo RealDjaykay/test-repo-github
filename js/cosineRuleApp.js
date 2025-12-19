@@ -15,5 +15,5 @@ document.write("<br><h3>----------------------------------------------------");
 document.write("<br><h3>side a given by user =",side_1);
 document.write("<br><h3>side b given by user =",side_2);
 document.write("<br><h3>angle between a and b given by user =",angle_between);
-document.write("<br><h3>The final angle opposite of angle between a and b =",unknown_side_squareRoot);
+document.write("<br><h3>The final angle opposite of angle between a and b =",unknown_side_squareRoot,"°");
 document.write("<br><h3>----------------------------------------------------");
